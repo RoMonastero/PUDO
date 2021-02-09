@@ -11,6 +11,7 @@ abstract class _AuthControllerBase with Store {
   IAuthRepository authRepository;
 
   _AuthControllerBase() {
+    //Pegando a interface do repositorio e passanso pro auth controller base
     authRepository = Modular.get<IAuthRepository>();
   }
 
@@ -20,24 +21,17 @@ abstract class _AuthControllerBase with Store {
   @observable
   String password = '';
 
+  //Verifica se o email ou a senha estão nulos para habilitar o botão de login
   @computed
   bool get enableButton => email.isNotEmpty && password.isNotEmpty;
 
+  //Define o email
   @action
   void setEmail(String email) => this.email = email;
 
+  //Define a senha
   @action
   void setPassword(String password) => this.password = password;
-
-  Future<void> doLoginGoogle() async {
-    await authRepository.doLoginGoogle().then((value) {
-      if (value.success) {
-        Modular.to.pushReplacementNamed(RoutersConst.home);
-      } else {
-        print(value.message);
-      }
-    });
-  }
 
   Future<void> doLoginEmail() async {
     await authRepository

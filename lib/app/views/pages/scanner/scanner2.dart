@@ -2,11 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gofast/app/controllers/barcode/barcode_controller.dart';
 import 'package:flutter_gofast/app/controllers/product/product_controller.dart';
-import 'package:flutter_gofast/app/core/consts/routers_consts.dart';
 import 'package:flutter_gofast/app/core/services/product_services.dart';
 import 'package:flutter_gofast/app/models/product_model.dart';
 import 'package:flutter_gofast/app/views/pages/camera/prescription.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class Scanner extends StatefulWidget {
   @override

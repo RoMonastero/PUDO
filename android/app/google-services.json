@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "842620996297",
+    "project_id": "login-61d3c",
+    "storage_bucket": "login-61d3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842620996297:android:b82ddd9dcfd155c2499b18",
+        "android_client_info": {
+          "package_name": "com.example.tela_de_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842620996297-cl3mupk8lmor6s8sgk6hpigb6f5s0adl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMWXxH0_542wOTnaBAAbKbgd4w9IEriSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842620996297-cl3mupk8lmor6s8sgk6hpigb6f5s0adl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

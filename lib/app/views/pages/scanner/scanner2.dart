@@ -5,6 +5,7 @@ import 'package:flutter_gofast/app/controllers/product/product_controller.dart';
 import 'package:flutter_gofast/app/core/consts/routers_consts.dart';
 import 'package:flutter_gofast/app/core/services/product_services.dart';
 import 'package:flutter_gofast/app/models/product_model.dart';
+import 'package:flutter_gofast/app/views/pages/camera/prescription.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class Scanner extends StatefulWidget {
@@ -51,60 +52,6 @@ class _ScannerState extends State<Scanner> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('$description'),
-            backgroundColor: Colors.green[700],
-            centerTitle: true,
-            leading: IconButton(
-              icon: Icon(Icons.keyboard_arrow_left),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ),
-          body: Container(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Image.network(
-                  thumbnail,
-                  height: 100.0,
-                  width: 100.0,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Código: $barcode",
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  description,
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  avgPrice,
-                  style: TextStyle(fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-                RaisedButton(
-                  onPressed: () {
-                    Modular.to.pushNamed(RoutersConst.camera);
-                  },
-                  child: Text(
-                    "TIRE A FOTO DO PRODUTO",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  color: Colors.green[800],
-                ),
-              ],
-            ),
-          )),
-    );
+    return PrescriptionScreen();
   }
 }

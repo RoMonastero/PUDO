@@ -21,15 +21,6 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
   File imageFile;
   final picker = ImagePicker();
 
-  _openGallery(BuildContext context) async {
-    final picture = await picker.getImage(source: ImageSource.gallery);
-
-    setState(() {
-      imageFile = File(picture.path);
-    });
-    await uploadImageToFirebase(context);
-  }
-
   _openCamera(BuildContext context) async {
     final picture = await picker.getImage(source: ImageSource.camera);
 
@@ -65,46 +56,28 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              const Icon(Icons.wallpaper, size: 250.0, color: Colors.grey),
+              const Icon(Icons.wallpaper, size: 230.0, color: Colors.grey),
               const SizedBox(
                 height: 200.00,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      _openCamera(context);
-                    },
-                    child: Column(
-                      children: <Widget>[
-                        const Icon(Icons.camera_alt, size: 50.0), // icon
-                        const Text("Câmera"),
-                      ],
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      _openGallery(context);
-                    },
-                    child: Column(
-                      children: <Widget>[
-                        const Icon(Icons.photo_library, size: 50.0), // icon
-                        const Text("Galeria"), // text
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InkWell(
+                      onTap: () {
+                        _openCamera(context);
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          const Icon(Icons.camera_alt, size: 50.0), // icon
+                          const Text("Câmera"),
+                        ],
+                      ),
                     ),
                   ),
                 ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: RaisedButton(
-                  onPressed: () {
-                    Modular.to.pushNamed(RoutersConst.confirmaPage);
-                  },
-                  child: Text("SALVAR"),
-                  color: Colors.green[800],
-                ),
               ),
             ],
           ),
@@ -113,46 +86,34 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
     } else {
       return Container(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Image.file(imageFile, width: 500, height: 500),
-              const SizedBox(height: 20.00),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      _openCamera(context);
-                    },
-                    child: Column(
-                      children: <Widget>[
-                        const Icon(Icons.camera_alt, size: 50.0), // icon
-                        const Text("Câmera"),
-                      ],
+          child: Padding(
+            padding: const EdgeInsets.only(
+                bottom: 56.0, left: 56.0, right: 56.0, top: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Image.file(
+                  imageFile,
+                ),
+                const SizedBox(height: 40.00),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        _openCamera(context);
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          const Icon(Icons.camera_alt, size: 50.0), // icon
+                          const Text("Câmera"),
+                        ],
+                      ),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      _openGallery(context);
-                    },
-                    child: Column(
-                      children: <Widget>[
-                        const Icon(Icons.photo_library, size: 50.0), // icon
-                        const Text("Galeria"), // text
-                      ],
-                    ),
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      Modular.to.pushNamed(RoutersConst.confirmaPage);
-                    },
-                    child: Text("SALVAR"),
-                    color: Colors.green[800],
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -179,9 +140,19 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
       body: Container(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               _decideImageView(),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 24.0, right: 24.0, bottom: 24.0),
+                child: RaisedButton(
+                  onPressed: () {
+                    Modular.to.pushNamed(RoutersConst.confirmaPage);
+                  },
+                  child: Text("SALVAR"),
+                  color: Colors.green[800],
+                ),
+              ),
             ],
           ),
         ),

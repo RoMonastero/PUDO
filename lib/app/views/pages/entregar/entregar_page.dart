@@ -9,6 +9,7 @@ class Entregar extends StatefulWidget {
   _EntregarState createState() => _EntregarState();
 }
 
+//pagina de quando se clica em entregar na home
 class _EntregarState extends ModularState<Entregar, EntregarController> {
   @override
   Widget build(BuildContext context) {

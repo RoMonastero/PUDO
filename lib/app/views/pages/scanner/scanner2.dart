@@ -6,6 +6,7 @@ import 'package:flutter_gofast/app/core/services/product_services.dart';
 import 'package:flutter_gofast/app/models/product_model.dart';
 import 'package:flutter_gofast/app/views/pages/camera/prescription.dart';
 
+//esse é o scanner que aparece apos a confirmação do produto para poder scannear o código do produto
 class Scanner extends StatefulWidget {
   @override
   _ScannerState createState() => _ScannerState();

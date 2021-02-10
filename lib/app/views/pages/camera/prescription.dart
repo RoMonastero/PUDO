@@ -49,6 +49,7 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
         .then((value) => print("Done: $value"));
   }
 
+  //Decide se aparecerá a imagem na tela ou a opção de tirar foto
   Widget _decideImageView() {
     if (imageFile == null) {
       return Container(

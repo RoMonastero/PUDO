@@ -1,3 +1,5 @@
+//API para ser possivel identificar o produto pelo leitor de codigo
+
 class ProductController {
   String description;
   int gtin;

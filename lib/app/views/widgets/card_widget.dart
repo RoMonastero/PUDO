@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+//Faz os cards da home
 class CriaCard extends StatelessWidget {
   final int color;
   final String titulo;

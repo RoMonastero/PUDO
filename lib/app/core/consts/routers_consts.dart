@@ -1,5 +1,5 @@
 class RoutersConst {
-  //Consts para as rotas
+  //Constantes para as rotas
 
   static const String intro = '/';
   static const String home = '/home';

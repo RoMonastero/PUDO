@@ -28,6 +28,7 @@ class _ConfirmaState extends State<Confirma> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              //apenas um exemplo de como deve ficar
               Image.asset('assets/images/logo-limelocker.png'),
               Text("Confirma entrega de lalala para apto lala?"),
               Text("Nome da pessoa"),

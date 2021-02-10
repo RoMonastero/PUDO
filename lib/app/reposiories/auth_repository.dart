@@ -9,6 +9,7 @@ class AuthRepository implements IAuthRepository {
 
   AuthRepository(this.firebaseAuth);
 
+  // Faz o login com email e senha
   @override
   Future<DefaultResponse> doLoginEmailPassword(
       {String email, String password}) async {
@@ -23,6 +24,7 @@ class AuthRepository implements IAuthRepository {
     }
   }
 
+  //Pega o id do usuario
   @override
   Future<DefaultResponse> getUser() async {
     try {
@@ -33,6 +35,7 @@ class AuthRepository implements IAuthRepository {
     }
   }
 
+  //Faz o log out
   @override
   Future<DefaultResponse> logOut() async {
     try {
@@ -43,6 +46,7 @@ class AuthRepository implements IAuthRepository {
     }
   }
 
+  //Registra um novo usuario com email e senha
   @override
   Future<DefaultResponse> registerEmailPassword(
       {String email, String password}) async {

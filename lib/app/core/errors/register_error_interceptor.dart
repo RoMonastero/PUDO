@@ -1,5 +1,6 @@
 import 'package:flutter_gofast/app/interfaces/error_interceptor_interface.dart';
 
+//Casos de erro na hora de fazer o registro
 class RegisterErrorInterceptor implements IErrorInterceptor {
   @override
   String handleError(String error) {

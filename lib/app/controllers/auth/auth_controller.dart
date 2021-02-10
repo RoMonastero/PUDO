@@ -33,8 +33,10 @@ abstract class _AuthControllerBase with Store {
   @action
   void setPassword(String password) => this.password = password;
 
+  //Faz Login com Email
   Future<void> doLoginEmail() async {
     await authRepository
+        //trim serve para tirar espaços antes e depois
         .doLoginEmailPassword(email: email.trim(), password: password.trim())
         .then((response) {
       if (response.success) {
@@ -45,6 +47,7 @@ abstract class _AuthControllerBase with Store {
     });
   }
 
+  //Registra um novo usuario
   Future<void> doRegister() async {
     var response = await authRepository.registerEmailPassword(
       email: email,
@@ -57,6 +60,7 @@ abstract class _AuthControllerBase with Store {
     }
   }
 
+  //Faz o logout
   Future<void> doLogout() async {
     var response = await authRepository.logOut();
     if (response.success) {

@@ -15,6 +15,7 @@ class ConfirmaEntrega extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //utilizando esse if para quando o usuario utiliza o leitor
     if (barcode != null &&
         description != null &&
         thumbnail != null &&
@@ -84,6 +85,7 @@ class ConfirmaEntrega extends StatelessWidget {
               ],
             ),
           ));
+      //esse else é para quando o usuario não utiliza o leitor
     } else {
       return Scaffold(
           appBar: AppBar(

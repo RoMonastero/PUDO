@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
 
+//Classe para oleitor de codigo de barras
 class BarcodeController {
   Future<String> barcodeScanning() async {
     try {

@@ -6,6 +6,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 
+//Pagina de login
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -56,6 +57,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               name: 'LoginButton',
               builder: (context) {
                 return RaisedButton(
+                  //SO libera o botão apos ter algo no campo email e senha
                   onPressed: _authController.enableButton
                       ? () async {
                           await _authController.doLoginEmail().catchError(

@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
       builder: (context) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter GoFast',
+          title: 'PUDO',
           initialRoute: RoutersConst.login,
           theme: Modular.get<AppController>().themeApp.getTheme(),
           themeMode: Modular.get<AppController>().themeMode,
